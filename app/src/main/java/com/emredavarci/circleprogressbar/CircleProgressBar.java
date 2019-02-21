@@ -39,7 +39,7 @@ public class CircleProgressBar extends View {
 
     private int progressColor;
     private int backgroundColor;
-    private float strokeWidth;
+    private float strokeWidthMK;
     private float backgroundWidth;
     private boolean roundedCorners;
     private float maxValue;
@@ -69,7 +69,7 @@ public class CircleProgressBar extends View {
 
         progressColor = ta.getColor(R.styleable.CircleProgressBar_progressColor, Color.BLUE);
         backgroundColor = ta.getColor(R.styleable.CircleProgressBar_backgroundColor, Color.GRAY);
-        strokeWidth = ta.getFloat(R.styleable.CircleProgressBar_strokeWidth, 10);
+        strokeWidthMK = ta.getFloat(R.styleable.CircleProgressBar_strokeWidthMK, 10);
         backgroundWidth = ta.getFloat(R.styleable.CircleProgressBar_backgroundWidth, 10);
         roundedCorners = ta.getBoolean(R.styleable.CircleProgressBar_roundedCorners, false);
         maxValue = ta.getFloat(R.styleable.CircleProgressBar_maxValue, 100);
@@ -83,7 +83,7 @@ public class CircleProgressBar extends View {
         progressBarPaint.setStyle(Paint.Style.FILL);
         progressBarPaint.setColor(progressColor);
         progressBarPaint.setStyle(Paint.Style.STROKE);
-        progressBarPaint.setStrokeWidth(strokeWidth * getResources().getDisplayMetrics().density);
+        progressBarPaint.setStrokeWidth(strokeWidthMK * getResources().getDisplayMetrics().density);
         if(roundedCorners){
             progressBarPaint.setStrokeCap(Paint.Cap.ROUND);
         }else{
@@ -202,12 +202,12 @@ public class CircleProgressBar extends View {
     }
 
     public void setStrokeWidth(float width){
-        strokeWidth = width;
+        strokeWidthMK = width;
         invalidate();
     }
 
     public float getStrokeWidth(){
-        return strokeWidth;
+        return strokeWidthMK;
     }
 
     public void setBackgroundWidth(float width){
